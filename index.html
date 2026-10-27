@@ -1,107 +1,595 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#a5c9f5">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Max Crafter YT | Content Creator & Software Developer</title>
-  <meta name="description" content="Visit the official profile of Max Crafter YT, a Roblox content creator, software developer, and website developer known as @max-yt2025.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Max Crafter YT">
-  <meta name="keywords" content="Max Crafter YT, max-yt2025, Roblox creator, YouTube creator, software developer, website developer">
+    <title>Max Crafter YT | Official Profile</title>
+    <meta name="description" content="Welcome to the official profile of Max Crafter YT (@max-yt2025), content creator, software developer, and website developer.">
+    <meta name="author" content="Max Crafter YT">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#777b7e">
 
-  <link rel="canonical" href="https://profile.max-yt2025.space/">
+    <link rel="canonical" href="https://profile.max-yt2025.space/">
 
-  <meta property="og:type" content="profile">
-  <meta property="og:site_name" content="Max Crafter YT">
-  <meta property="og:title" content="Max Crafter YT | Content Creator & Software Developer">
-  <meta property="og:description" content="The official profile of Max Crafter YT (@max-yt2025), a content creator and software and website developer.">
-  <meta property="og:url" content="https://profile.max-yt2025.space/">
-  <meta property="og:image" content="https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg">
-  <meta property="og:image:alt" content="Max Crafter YT profile avatar">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Max Crafter YT | Official Profile">
+    <meta property="og:description" content="Explore the official profile of Max Crafter YT, content creator and developer.">
+    <meta property="og:url" content="https://profile.max-yt2025.space/">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Max Crafter YT | Content Creator & Software Developer">
-  <meta name="twitter:description" content="Official profile for Max Crafter YT, also known as @max-yt2025.">
-  <meta name="twitter:image" content="https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg">
+    <style>
+        :root {
+            --text: #eeeeef;
+            --muted: #c9cbd0;
+            --glass: rgba(75, 77, 82, 0.42);
+            --border: rgba(255, 255, 255, 0.13);
+            --blue: #a6d0ff;
+            --green: #75dba5;
+            --red: #c9363d;
+        }
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "name": "Max Crafter YT",
-    "url": "https://profile.max-yt2025.space/",
-    "description": "Official profile of Max Crafter YT, a content creator and software and website developer.",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Max Crafter YT",
-      "alternateName": "@max-yt2025",
-      "url": "https://profile.max-yt2025.space/",
-      "image": "https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg",
-      "sameAs": [
-        "https://youtube.com/@max-yt2025",
-        "https://www.youtube.com/channel/UCKrBCY6Wy5CvqBCroZ3Heiw",
-        "https://www.roblox.com/users/3051532382/profile"
-      ],
-      "jobTitle": ["Content Creator", "Software Developer", "Website Developer"]
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            color: var(--text);
+            background: #777b7e;
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+
+        /* BACKGROUND IMAGE */
+        .background {
+            position: fixed;
+            inset: -10px;
+            z-index: -3;
+
+            background:
+                linear-gradient(
+                    rgba(120, 123, 126, 0.58),
+                    rgba(48, 50, 54, 0.65)
+                ),
+                url("background.jpg") center 35% / cover no-repeat,
+                #777b7e;
+
+            filter: blur(2px) saturate(0.55);
+            transform: scale(1.03);
+        }
+
+        /* RAIN EFFECT */
+        .rain {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.25;
+
+            background-image: repeating-linear-gradient(
+                75deg,
+                transparent 0 85px,
+                rgba(170, 207, 255, 0.75) 86px,
+                transparent 88px 180px
+            );
+        }
+
+        .rain::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background-image: radial-gradient(
+                ellipse at center,
+                transparent 0 9px,
+                rgba(200, 220, 255, 0.6) 10px,
+                transparent 12px
+            );
+
+            background-size: 180px 95px;
+            opacity: 0.35;
+        }
+
+        /* CLICK TO ENTER SCREEN */
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #000;
+            transition: opacity 0.65s ease, visibility 0.65s ease;
+        }
+
+        .loading-screen button {
+            padding: 18px 24px;
+            border: none;
+            background: transparent;
+
+            color: #d6d6d8;
+            font-family: inherit;
+            font-size: clamp(20px, 2.5vw, 30px);
+            cursor: pointer;
+
+            transition: color 0.2s ease;
+        }
+
+        .loading-screen button:hover {
+            color: #fff;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* MAIN LAYOUT */
+        .container {
+            width: min(1000px, calc(100% - 36px));
+            min-height: 100vh;
+            margin: auto;
+            padding: 75px 0 35px;
+
+            display: grid;
+            grid-template-columns: minmax(270px, 0.95fr) minmax(400px, 1.2fr);
+            align-items: start;
+            gap: clamp(35px, 7vw, 85px);
+        }
+
+        /* LEFT PROFILE */
+        .identity {
+            padding-top: 5px;
+        }
+
+        .avatar-ring {
+            width: 98px;
+            height: 98px;
+            padding: 5px;
+            margin-bottom: 12px;
+
+            display: grid;
+            place-items: center;
+
+            border: 2px dashed #b1d5ff;
+            border-radius: 50%;
+            background: rgba(220, 235, 255, 0.18);
+
+            box-shadow:
+                0 0 17px rgba(130, 187, 255, 0.45),
+                inset 0 0 12px rgba(130, 187, 255, 0.2);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            color: #f4f0f0;
+            font-size: clamp(27px, 3vw, 34px);
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .merch {
+            margin-bottom: 10px;
+            color: #dedfe3;
+            font-size: 14px;
+        }
+
+        .merch a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .merch a:hover {
+            color: white;
+        }
+
+        .tagline {
+            max-width: 380px;
+            color: #e3e3e5;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* BUTTONS */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 5px 12px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(210, 212, 216, 0.17);
+            color: #f3f3f5;
+
+            font-size: 12px;
+            text-decoration: none;
+
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .chip:hover {
+            background: rgba(255, 255, 255, 0.28);
+            transform: translateY(-1px);
+        }
+
+        /* RIGHT SIDE */
+        .main-content {
+            display: grid;
+            gap: 18px;
+        }
+
+        .about {
+            padding-top: 3px;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+            font-size: 17px;
+            font-weight: 650;
+        }
+
+        .about p {
+            margin-bottom: 12px;
+            color: #e0e1e4;
+            font-size: 13px;
+        }
+
+        /* TRANSPARENT GLASS CARDS */
+        .glass-card {
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: var(--glass);
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+
+            backdrop-filter: blur(17px);
+            -webkit-backdrop-filter: blur(17px);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .profile-card {
+            min-height: 88px;
+            padding: 12px;
+
+            display: grid;
+            grid-template-columns: 56px minmax(0, 1fr);
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-card.wide {
+            grid-column: 1 / -1;
+        }
+
+        .mini-avatar {
+            width: 56px;
+            height: 56px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 650;
+        }
+
+        .card-description {
+            margin: 2px 0 7px;
+            color: #d0d1d6;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 999px;
+
+            background: var(--red);
+            color: white;
+
+            font-size: 11px;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .button.green {
+            background: var(--green);
+            color: #183c2b;
+        }
+
+        .button.light {
+            background: #e3e5e8;
+            color: #27292c;
+        }
+
+        .button:hover {
+            filter: brightness(1.1);
+        }
+
+        /* LOWER ABOUT CARD */
+        .description-card {
+            padding: 16px;
+            font-size: 13px;
+        }
+
+        .description-card h3 {
+            margin-bottom: 3px;
+            font-size: 13px;
+        }
+
+        .description-card p {
+            margin-bottom: 10px;
+        }
+
+        .description-card a {
+            color: var(--blue);
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 25px;
+            color: #dedfe3;
+            font-size: 11px;
+        }
+
+        footer a {
+            color: inherit;
+        }
+
+        /* MOBILE SUPPORT */
+        @media (max-width: 760px) {
+            .container {
+                width: min(540px, calc(100% - 28px));
+                padding-top: 70px;
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .identity {
+                text-align: center;
+            }
+
+            .avatar-ring {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .tagline {
+                margin: auto;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card.wide {
+                grid-column: auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Max Crafter YT",
+        "url": "https://profile.max-yt2025.space/",
+        "description": "Official profile of Max Crafter YT, content creator and developer.",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Max Crafter YT",
+            "alternateName": "@max-yt2025",
+            "url": "https://profile.max-yt2025.space/",
+            "sameAs": [
+                "https://youtube.com/@max-yt2025",
+                "https://www.youtube.com/channel/UCKrBCY6Wy5CvqBCroZ3Heiw",
+                "https://www.roblox.com/users/3051532382/profile"
+            ]
+        }
     }
-  }
-  </script>
+    </script>
 </head>
 
 <body>
-  <header>
-    <p><a href="https://profile.max-yt2025.space/" aria-label="Max Crafter YT home">Max Crafter YT</a></p>
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#profiles">Social profiles</a>
-      <a href="#stats">Creator statistics</a>
-    </nav>
-  </header>
 
-  <main>
-    <section aria-labelledby="profile-title">
-      <img
-        src="https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg"
-        alt="Max Crafter YT profile avatar"
-        width="160"
-        height="160"
-        fetchpriority="high">
-      <h1 id="profile-title">Max Crafter YT</h1>
-      <p><strong>Content Creator · Software Developer · Website Developer</strong></p>
-      <p>Known online as <strong>@max-yt2025</strong>, Max creates online content and builds software and websites.</p>
-    </section>
+    <div class="background" aria-hidden="true"></div>
+    <div class="rain" aria-hidden="true"></div>
 
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About Max</h2>
-      <p>I'm Max, a content creator and developer who enjoys building projects and connecting with my online community. Follow my channels to see my latest content and projects.</p>
-    </section>
+    <!-- BLACK LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <button type="button" id="enterButton">「 Click to enter 」</button>
+    </div>
 
-    <section id="stats" aria-labelledby="stats-title">
-      <h2 id="stats-title">Creator statistics</h2>
-      <ul>
-        <li><strong>YouTube views:</strong> approximately 71.5K</li>
-        <li><strong>YouTube subscribers:</strong> approximately 1.2K</li>
-        <li><strong>Videos:</strong> 92</li>
-      </ul>
-      <p><small>Statistics reflect the captured profile snapshot and may change.</small></p>
-    </section>
+    <main class="container">
 
-    <section id="profiles" aria-labelledby="profiles-title">
-      <h2 id="profiles-title">Official profiles</h2>
-      <ul>
-        <li><a href="https://youtube.com/@max-yt2025" rel="me noopener noreferrer">YouTube — @max-yt2025</a></li>
-        <li><a href="https://www.youtube.com/channel/UCKrBCY6Wy5CvqBCroZ3Heiw" rel="me noopener noreferrer">YouTube channel</a></li>
-        <li><a href="https://www.roblox.com/users/3051532382/profile" rel="me noopener noreferrer">Roblox profile</a></li>
-        <li><a href="https://discord.com/users/1499017878199079005" rel="me noopener noreferrer">Discord profile</a></li>
-      </ul>
-    </section>
-  </main>
+        <!-- LEFT COLUMN -->
+        <section class="identity" aria-labelledby="profileName">
 
-  <footer>
-    <p>&copy; <span>Max Crafter YT</span>. All rights reserved.</p>
-    <p><a href="https://profile.max-yt2025.space/">profile.max-yt2025.space</a></p>
-  </footer>
+            <div class="avatar-ring">
+                <img
+                    class="avatar"
+                    src="https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg"
+                    alt="Max Crafter YT avatar"
+                    width="88"
+                    height="88"
+                >
+            </div>
+
+            <h1 id="profileName">Max Crafter YT</h1>
+
+            <p class="merch">
+                📍 <a href="https://shop.max-yt2025.space/">Max Crafter YT Official Merch</a>
+            </p>
+
+            <p class="tagline">
+                Life may be hard sometimes, but as long as you have someone
+                in your life everything will be better again 💖
+            </p>
+
+            <div class="social-links">
+                <a class="chip" href="https://youtube.com/@max-yt2025">▶ YouTube</a>
+                <a class="chip" href="https://profile.max-yt2025.space/">↗ @max-yt2025</a>
+            </div>
+
+            <footer>
+                © Max Crafter YT ·
+                <a href="https://profile.max-yt2025.space/">profile.max-yt2025.space</a>
+            </footer>
+
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <section class="main-content" aria-label="Profile details">
+
+            <section class="about" id="about">
+                <h2>About</h2>
+
+                <p>
+                    I have a girlfriend/wife called Faith. Since she entered
+                    my life, it felt better — she restored my happiness.
+                </p>
+
+                <div class="social-links">
+                    <a class="chip" href="https://youtube.com/@max-yt2025">▶ YouTube</a>
+                    <a class="chip" href="https://profile.max-yt2025.space/">↗ @max-yt2025</a>
+                </div>
+            </section>
+
+            <div class="cards">
+
+                <article class="glass-card profile-card">
+                    <img
+                        class="mini-avatar"
+                        src="https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg"
+                        alt=""
+                        loading="lazy"
+                    >
+
+                    <div>
+                        <p class="card-title">Max Crafter YT</p>
+                        <p class="card-description">Creator profile</p>
+                        <a class="button green" href="https://profile.max-yt2025.space/">View Profile</a>
+                    </div>
+                </article>
+
+                <article class="glass-card profile-card">
+                    <img
+                        class="mini-avatar"
+                        src="https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg"
+                        alt=""
+                        loading="lazy"
+                    >
+
+                    <div>
+                        <p class="card-title">Max Crafter YT</p>
+                        <p class="card-description">YouTube · Videos &amp; updates</p>
+                        <a class="button" href="https://youtube.com/@max-yt2025">View Channel</a>
+                    </div>
+                </article>
+
+                <article class="glass-card profile-card wide">
+                    <img
+                        class="mini-avatar"
+                        src="https://cdn.frail.lol/avatars/3105/74760103-685c-4c41-aa59-1b60a69d4054.jpeg"
+                        alt=""
+                        loading="lazy"
+                    >
+
+                    <div>
+                        <p class="card-title">Max</p>
+                        <p class="card-description">Roblox profile · Creator community</p>
+                        <a class="button light" href="https://www.roblox.com/users/3051532382/profile">View Profile</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <section class="glass-card description-card">
+                <h3>about</h3>
+
+                <p>
+                    I'm MAX! A content creator who loves making content
+                    and building projects.
+                </p>
+
+                <p>
+                    I'm a software and website developer. Make sure to
+                    follow me if you want to keep up with my projects!
+                </p>
+
+                <p>
+                    <a href="https://youtube.com/@max-yt2025">YouTube</a>
+                    ·
+                    <a href="https://www.roblox.com/users/3051532382/profile">Roblox</a>
+                </p>
+            </section>
+
+        </section>
+    </main>
+
+    <script>
+        const loadingScreen = document.getElementById("loadingScreen");
+        const enterButton = document.getElementById("enterButton");
+
+        enterButton.addEventListener("click", () => {
+            loadingScreen.classList.add("hidden");
+
+            window.setTimeout(() => {
+                loadingScreen.remove();
+            }, 700);
+        });
+    </script>
+
 </body>
 </html>
+```
